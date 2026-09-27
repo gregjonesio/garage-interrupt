@@ -16,11 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      # Pin these two actions to commit SHAs before relying on this workflow.
-      - uses: actions/checkout@v4
+      # Both actions are pinned to the commit their v4 tag pointed at on 2026-09-26.
+      # To update: read the new commit from the action's own tag, then change both.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
