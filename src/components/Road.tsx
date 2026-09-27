@@ -64,10 +64,10 @@ export function Road({ data, vehicle }: Props) {
   const width = typeof window === "undefined" ? 1200 : window.innerWidth;
 
   return (
-    <section aria-labelledby="road-title" className="on-dark mt-16 bg-asphalt py-16 text-paint sm:mt-20 sm:py-20">
+    <section id="road" aria-labelledby="road-title" className="on-dark mt-16 scroll-mt-0 bg-asphalt py-16 text-paint sm:mt-20 sm:py-20">
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
         <h2 id="road-title" className="max-w-[20ch] text-[clamp(2rem,4.4vw,3.4rem)] font-extrabold leading-[1.02]">
-          Same road. Different vehicle. Different exits.
+          Same information. Different vehicle. Different interrupts.
         </h2>
         <p className="mt-5 max-w-[66ch] text-[17px] leading-relaxed text-paint-soft">
           Each mark is one notice, in the order NHTSA published it. The marks stay where they are. Pick another vehicle
@@ -160,8 +160,8 @@ export function Road({ data, vehicle }: Props) {
         </div>
 
         <p className="mt-8 max-w-[66ch] text-[15px] leading-relaxed text-paint-soft">
-          Through lanes hold every notice. The exit lane repeats the ones that reached this vehicle; select one to open
-          it.{" "}
+          The small marks are every notice. The large squares beside them repeat the ones that reached this vehicle;
+          select one to open it.{" "}
           <Link href={`/garage/${vehicle.id}`} className="text-paint underline">
             List all {formatCount(data.total)} for the {vehicle.title}
           </Link>

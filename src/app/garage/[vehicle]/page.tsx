@@ -46,7 +46,7 @@ export default async function VehiclePage({ params }: PageProps<"/garage/[vehicl
         <div>
           <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-extrabold leading-[0.98]">{vehicleTitle(v)}</h1>
           <p className="mt-2 text-[19px]">
-            {v.state.trim}. Exit {v.exit} on the front page.
+            {v.state.trim}. Vehicle {v.exit} of {VEHICLES.length}.
           </p>
           <p className="mt-6 max-w-[56ch] text-[17px] leading-relaxed text-ink-soft">
             Of {formatCount(rows.length)} notices, {reached.filter((r) => r.c[5] === 2).length} were interrupts,{" "}

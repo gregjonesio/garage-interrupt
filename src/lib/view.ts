@@ -22,6 +22,7 @@ export type VehicleView = {
   id: string;
   exit: number;
   label: string;
+  make: string;
   title: string; // "2022 Ford F-150"
   trim: string;
   traits: string[];
@@ -55,6 +56,10 @@ export type HomeData = {
   eventTypes: string; // one digit per notice, an index into TYPE_ORDER
   vehicles: VehicleView[];
   matrix: MatrixRow[];
+  // The matrix rows with the highest relevance for any one vehicle, highest first.
+  compare: MatrixRow[];
+  // Measured on the decisions this build shows.
+  proof: { decisions: number; medianMs: number | null; costUsd: number };
 };
 
 export const TYPE_ORDER: EventType[] = [

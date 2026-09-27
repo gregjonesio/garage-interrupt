@@ -1,1 +1,1 @@
-A green highway guide sign reading: Your car has patch notes. We show you the ones that matter. A yellow panel counts the interrupts for one vehicle.
+A green highway guide sign reading: Your car has patch notes. We show you the ones that matter. A white plate gives the number of decisions made by Jev, the median response time and the cost. A yellow panel counts the interrupts.

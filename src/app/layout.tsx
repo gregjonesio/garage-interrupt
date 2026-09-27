@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Overpass, Overpass_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   title: { default: "Garage Interrupt", template: "%s | Garage Interrupt" },
   description:
     "Your car has patch notes. Garage Interrupt uses Jev to decide which automotive notices matter to one specific vehicle.",
+  openGraph: { type: "website", siteName: "Garage Interrupt" },
+  twitter: { card: "summary_large_image" },
 };
+
+// Guide green. Link previews that draw a colored edge, and phone browsers, use it.
+export const viewport: Viewport = { themeColor: "#00613f" };
 
 const CONTRACT = `<!--
 THESIS: An interchange for notices. Every notice travels the same road; only the few that matter to one vehicle take its exit. Refuses the dark AI dashboard of metric cards.

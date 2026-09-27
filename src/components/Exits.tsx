@@ -63,8 +63,8 @@ export function Exits({ vehicle, total }: { vehicle: VehicleView; total: number 
       </h2>
       {vehicle.hits.length === 0 ? (
         <p className="mt-5 max-w-[60ch] text-[17px] leading-relaxed text-ink-soft">
-          Nothing in this period asked for this vehicle&apos;s attention. All {formatCount(total)} notices passed
-          through. That is the usual result, and it is the point.
+          Nothing in this period asked for this vehicle&apos;s attention. All {formatCount(total)} notices were
+          ignored. That is the usual result, and it is the point.
         </p>
       ) : (
         <p className="mt-5 max-w-[60ch] text-[17px] leading-relaxed text-ink-soft">

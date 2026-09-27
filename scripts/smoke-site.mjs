@@ -44,7 +44,7 @@ try {
   const first = await titleOf();
 
   // Choosing a vehicle changes the page in place and the address.
-  await page.click('[aria-label^="Exit 2,"]');
+  await page.click('[aria-label^="2022 Ford F-150,"]');
   await page.waitForFunction((t) => document.querySelector("[aria-live] p").textContent !== t, {}, first);
   check("choosing a vehicle updates the sign", (await titleOf()) !== first, await titleOf());
   check("the address carries the vehicle", page.url().includes("v=ford-f150"), page.url());
@@ -52,7 +52,7 @@ try {
   check("exactly one vehicle is marked as chosen", pressed === 1, String(pressed));
 
   // The keyboard alone can choose a vehicle.
-  await page.focus('[aria-label^="Exit 3,"]');
+  await page.focus('[aria-label^="2023 Ford Bronco,"]');
   await page.keyboard.press("Enter");
   await page.waitForFunction(() => location.search.includes("ford-bronco"));
   check("a vehicle can be chosen from the keyboard", page.url().includes("v=ford-bronco"));
@@ -63,15 +63,15 @@ try {
   await page.goto(base + "/?v=<script>alert(1)</script>", { waitUntil: "networkidle0" });
   check("an unknown vehicle in the address is ignored", (await titleOf()) === first, await titleOf());
 
-  // From the road's exit lane into a notice, and back.
+  // From the road into a notice, and back.
   await page.goto(base + "/?v=ford-f150", { waitUntil: "networkidle0" });
   const exit = await page.$('[role="group"][aria-label*="notices"] a');
-  check("the exit lane holds links", exit !== null);
+  check("the road holds links to the notices that reached the vehicle", exit !== null);
   if (exit) {
     const href = await exit.evaluate((a) => a.getAttribute("href"));
     await Promise.all([page.waitForFunction((h) => location.pathname + location.search === h, {}, href), exit.click()]);
     await page.waitForSelector("article h1");
-    check("an exit opens its notice", page.url().includes("/event/"), page.url());
+    check("a road link opens its notice", page.url().includes("/event/"), page.url());
     const forVehicle = await page.$$eval("h2", (els) => els.map((e) => e.textContent).find((t) => t.startsWith("For the")));
     check("the notice keeps the chosen vehicle", forVehicle?.includes("F-150") ?? false, forVehicle);
     await page.goBack({ waitUntil: "networkidle0" });

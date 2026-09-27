@@ -28,7 +28,7 @@ export default function Garage() {
               <Link href={`/garage/${v.id}`} className="group flex h-full flex-col no-underline">
                 <span className="flex justify-end pr-6">
                   <span className="sign sign-sm sign-flat legend -mb-[3px] rounded-b-none px-3.5 pb-1 pt-2 text-[14px] leading-none">
-                    Exit {v.exit}
+                    Vehicle {v.exit}
                   </span>
                 </span>
                 <span className="sign on-dark flex flex-1 flex-col p-6 transition-transform duration-200 ease-[var(--ease-out-expo)] group-hover:-translate-y-1 sm:p-7">

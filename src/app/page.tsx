@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Interchange } from "@/components/Interchange";
 import { Arrow } from "@/components/glyphs";
@@ -20,6 +21,26 @@ const ANSWER_SHAPE: Record<string, string> = {
   choice: "One of 18 vehicle areas",
 };
 
+// What a shared link shows. The figures are read from the build, as on the page.
+export function generateMetadata(): Metadata {
+  const data = buildHome();
+  if (data.mode !== "jev") return {};
+  const interrupts = data.vehicles.reduce((n, v) => n + v.counts.interrupt, 0);
+  const title = "Garage Interrupt: your car has patch notes";
+  const description =
+    `Jev judged ${formatCount(data.total)} NHTSA notices against ${data.vehicles.length} vehicles: ` +
+    `${formatCount(data.proof.decisions)} decisions` +
+    (data.proof.medianMs === null ? "" : `, ${data.proof.medianMs} ms median`) +
+    `, $${data.proof.costUsd.toFixed(2)} in total. ${formatCount(interrupts)} became interrupts.`;
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: "/" },
+    openGraph: { type: "website", siteName: "Garage Interrupt", url: "/", title, description },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export default function Home() {
   const data = buildHome();
   const { stats } = load().site;
@@ -32,6 +53,43 @@ export default function Home() {
   return (
     <>
       <Interchange data={data} fallback={fallback} />
+
+      {data.mode === "jev" && (
+        <section aria-labelledby="why-title" className="mx-auto max-w-[1240px] px-4 pt-24 sm:px-6">
+          <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+            <div>
+              <h2 id="why-title" className="max-w-[18ch] text-[clamp(2rem,4.4vw,3.4rem)] font-extrabold leading-[1.02]">
+                Why use Jev?
+              </h2>
+              <p className="mt-6 max-w-[24ch] text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold leading-[1.12]">
+                {formatCount(stats.scored)} vehicle and notice pairs, judged for ${stats.estCostUsd.toFixed(2)} in
+                total.
+              </p>
+              <p className="mt-6 max-w-[62ch] text-[17px] leading-relaxed text-ink-soft">
+                A large reasoning model would be unnecessary for most of these decisions. Nearly every notice has
+                nothing to do with a given vehicle, and saying so should be quick and cost almost nothing. Jev acts as
+                a fast semantic gate that decides which information deserves attention.
+              </p>
+              <p className="mt-4 max-w-[62ch] text-[15px] leading-relaxed text-ink-soft">
+                Cost is {formatCount(stats.inputTokens)} input tokens at the published price of $0.042 per million.
+                No other model was run on these pairs, so nothing here compares Jev&apos;s cost or speed with one.
+              </p>
+            </div>
+            <dl className="sign on-dark self-start p-6 sm:p-8">
+              {[
+                ["Median decision latency", stats.medianMs === null ? "n/a" : `${stats.medianMs} ms`],
+                ["Decision type", `${Object.keys(QUESTIONS).length} typed probabilistic questions`],
+                ["Output", "No generated prose"],
+              ].map(([name, value]) => (
+                <div key={name} className="border-t border-white/35 py-4 first:border-t-0 first:pt-0 last:pb-0">
+                  <dt className="legend text-[12px] leading-tight">{name}</dt>
+                  <dd className="mt-1.5 text-[clamp(1.35rem,2.4vw,1.75rem)] font-extrabold leading-[1.12]">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       <section aria-labelledby="asked-title" className="mx-auto max-w-[1240px] px-4 pt-24 sm:px-6">
         <div className="grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">

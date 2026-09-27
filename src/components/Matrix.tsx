@@ -38,11 +38,12 @@ export function Matrix({ rows, vehicles, selected, onSelect }: Props) {
   return (
     <section aria-labelledby="matrix-title" className="mx-auto max-w-[1240px] px-4 pt-24 sm:px-6">
       <h2 id="matrix-title" className="max-w-[22ch] text-[clamp(2rem,4.4vw,3.4rem)] font-extrabold leading-[1.02]">
-        One notice, sixteen answers
+        Every vehicle beside every other
       </h2>
       <p className="mt-5 max-w-[66ch] text-[17px] leading-relaxed text-ink-soft">
-        Each row is a real notice. Each number is the probability Jev gave that the notice is relevant to that vehicle.
-        The rows were chosen by rule: for each vehicle, the notice Jev scored highest for it.
+        The comparison above, in full. Each row is a real notice. Each number is the probability Jev gave that the
+        notice is relevant to that vehicle. The rows were chosen by rule: for each vehicle, the notice Jev scored
+        highest for it.
       </p>
       <p className="mt-4 text-[15px] text-ink-soft lg:hidden">Scroll the table sideways for all sixteen vehicles.</p>
       {/* No side padding on the scroller below the desktop width: scrolled columns would show through it beside the pinned column. */}
@@ -64,14 +65,14 @@ export function Matrix({ rows, vehicles, selected, onSelect }: Props) {
                       type="button"
                       onClick={() => onSelect(v.id)}
                       aria-pressed={on}
-                      aria-label={`Exit ${v.exit}, ${v.title}`}
+                      aria-label={v.title}
                       className={`flex min-h-[48px] w-full flex-col items-center justify-center rounded px-0 py-1.5 transition-colors duration-150 ${
                         on ? "bg-white text-guide-deep" : "hover:bg-white/15"
                       }`}
                     >
-                      {/* Exit number over the name. Names are in mixed case, as destinations are on a guide sign, which also lets all sixteen fit upright. */}
-                      <span className="text-[15px] font-extrabold leading-none">{v.exit}</span>
-                      <span className="mt-1 whitespace-nowrap text-[11px] font-bold leading-none">{v.label}</span>
+                      {/* Model year over the name. Names are in mixed case, as destinations are on a guide sign, which also lets all sixteen fit upright. */}
+                      <span className="text-[13px] font-bold leading-none">{v.title.slice(0, 4)}</span>
+                      <span className="mt-1 whitespace-nowrap text-[11px] font-extrabold leading-none">{v.label}</span>
                     </button>
                   </th>
                 );

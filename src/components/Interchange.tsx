@@ -5,6 +5,7 @@ import type { HomeData } from "@/lib/view";
 import { Exits } from "./Exits";
 import { HeroSign, SUPPORT } from "./HeroSign";
 import { Matrix } from "./Matrix";
+import { OneNotice } from "./OneNotice";
 import { Road } from "./Road";
 import { useVehicle } from "./useVehicle";
 import { VehiclePicker } from "./VehiclePicker";
@@ -29,7 +30,10 @@ export function Interchange({ data, fallback }: { data: HomeData; fallback: stri
         <HeroSign
           total={data.total}
           days={data.days.length}
+          vehicles={data.vehicles.length}
           vehicle={vehicle}
+          proof={data.proof}
+          exploreHref={data.compare.length ? "#compare" : "#road"}
           onPrev={() => step(-1)}
           onNext={() => step(1)}
         />
@@ -38,6 +42,7 @@ export function Interchange({ data, fallback }: { data: HomeData; fallback: stri
         </div>
         <p className="mt-8 max-w-[60ch] text-[17px] leading-relaxed text-ink-soft lg:hidden">{SUPPORT}</p>
       </div>
+      <OneNotice rows={data.compare} vehicles={data.vehicles} selected={vehicle.id} />
       <Road data={data} vehicle={vehicle} />
       <Exits vehicle={vehicle} total={data.total} />
       <Matrix rows={data.matrix} vehicles={data.vehicles} selected={vehicle.id} onSelect={select} />

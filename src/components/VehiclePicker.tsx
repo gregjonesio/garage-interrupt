@@ -5,8 +5,8 @@ import type { VehicleView } from "@/lib/view";
 
 type Props = { vehicles: VehicleView[]; selected: string; onSelect: (id: string) => void };
 
-// One guide sign per vehicle, each with its exit number on a plaque above the
-// top edge. The chosen one turns to a white plate. Yellow is kept for interrupts.
+// One guide sign per vehicle, each with its make on a plaque above the top
+// edge. The chosen one turns to a white plate. Yellow is kept for interrupts.
 export function VehiclePicker({ vehicles, selected, onSelect }: Props) {
   const strip = useRef<HTMLDivElement>(null);
 
@@ -34,7 +34,7 @@ export function VehiclePicker({ vehicles, selected, onSelect }: Props) {
               key={v.id}
               type="button"
               aria-pressed={on}
-              aria-label={`Exit ${v.exit}, ${v.title}, ${v.counts.interrupt} ${v.counts.interrupt === 1 ? "interrupt" : "interrupts"}`}
+              aria-label={`${v.title}, ${v.counts.interrupt} ${v.counts.interrupt === 1 ? "interrupt" : "interrupts"}`}
               onClick={() => onSelect(v.id)}
               className="group min-w-[136px] shrink-0 snap-start text-left sm:min-w-0"
             >
@@ -42,7 +42,7 @@ export function VehiclePicker({ vehicles, selected, onSelect }: Props) {
                 <span
                   className={`sign sign-sm sign-flat ${face} legend -mb-[3px] rounded-b-none px-2.5 pb-0.5 pt-1.5 text-[11px] leading-none`}
                 >
-                  Exit {v.exit}
+                  {v.make}
                 </span>
               </span>
               <span

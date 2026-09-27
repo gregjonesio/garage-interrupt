@@ -12,6 +12,8 @@ import { displayTitle, lede, TYPE_ORDER, type HomeData, type Hit, type MatrixRow
 
 export { loadWindow, type WindowInfo } from "./home-window";
 
+const COMPARE_ROWS = 6; // notices the front-page comparison steps through
+
 function traits(v: VehicleProfile): string[] {
   const s = v.state;
   const out = [s.powertrain.split(",")[0], `${s.mileage.toLocaleString("en-US")} miles`];
@@ -74,6 +76,7 @@ export function buildHome(): HomeData {
       id: v.id,
       exit: v.exit,
       label: v.label,
+      make: v.state.make,
       title: vehicleTitle(v),
       trim: v.state.trim,
       traits: traits(v),
@@ -113,7 +116,12 @@ export function buildHome(): HomeData {
       }),
     }));
 
+  const top = (r: MatrixRow) => Math.max(...r.cells.map((c) => c[0]));
+  const compare = [...matrix].sort((a, b) => top(b) - top(a) || a.id.localeCompare(b.id)).slice(0, COMPARE_ROWS);
+
   return {
+    compare,
+    proof: { decisions: site.stats.scored, medianMs: site.stats.medianMs, costUsd: site.stats.estCostUsd },
     mode: site.mode,
     model: site.model,
     window: window ? { from: window.from, to: window.to } : null,

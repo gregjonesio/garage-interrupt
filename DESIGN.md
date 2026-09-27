@@ -177,7 +177,7 @@ components:
 
 Garage Interrupt is an interchange for notices. Every notice travels the same road, and only the few that matter to one vehicle take its exit. The visual system is the interstate guide sign system under an overcast sky: green guide panels with a white border set in from the edge, yellow exit panels, white fact plates, blue service signs, orange work-zone signs, and one asphalt band of painted marks. The lettering is Overpass, a face drawn from highway signage.
 
-The page reads the way a driver reads a gantry. One large guide sign carries the claim and the counts for a named vehicle. A row of smaller signs, each with its exit number on a plaque, lets the visitor change vehicle. Below, the road holds every notice as a painted mark, and the marks that reached the chosen vehicle light up and repeat in the exit lane as links. Density is moderate on the signs and high on the road, where every notice in the period is one mark in a single band.
+The page reads the way a driver reads a gantry. One large guide sign carries the claim and the counts for a named vehicle. A row of smaller signs, each with its make on a plaque, lets the visitor change vehicle. Below, the road holds every notice as a painted mark, and the marks that reached the chosen vehicle light up and repeat in the exit lane as links. Density is moderate on the signs and high on the road, where every notice in the period is one mark in a single band.
 
 The system refuses the dark AI dashboard of metric cards. Counts live on signs and on the road. Surfaces are flat, the sky is pale, and the only dark surface is the asphalt.
 
@@ -239,7 +239,7 @@ The palette is the road's own: five sign colors with fixed meanings, set against
 - **Figure** (800, clamp(2rem, 5vw, 3.1rem), line-height 1): counts and probabilities on signs. The through count on the hero steps up to clamp(2.4rem, 6vw, 3.9rem). Small figures inside notice signs are 22px.
 - **Body** (400, 17px, line-height 1.625): running text. Line length is held between 52ch and 72ch, most often 60ch to 66ch. The hero subhead is 600 weight at clamp(1.35rem, 3vw, 2.2rem).
 - **Body Small** (400, 15px, line-height 1.375 to 1.625): supporting lines on signs, captions, and footer text. Table cells use 14px to 16px.
-- **Label** (800, 11px to 15px, letter-spacing 0.035em, uppercase): the legend voice. 11px for table heads and exit plaques on vehicle signs, 12px for field labels, 14px to 15px for plaques, links, and small headings.
+- **Label** (800, 11px to 15px, letter-spacing 0.035em, uppercase): the legend voice. 11px for table heads and the plaques on vehicle signs, 12px for field labels, 14px to 15px for plaques, links, and small headings.
 - **Mono** (400, 13px, line-height 1.625): the state and question JSON on white plates, answer type names, NHTSA record IDs, and the model name.
 
 ### Named Rules
@@ -269,7 +269,7 @@ Signs hang in the air. Each one casts a single soft shadow tucked beneath its bo
 ### Shadow Vocabulary
 - **Sign** (`box-shadow: 0 0 0 4px <blank>, 0 22px 28px -20px oklch(0.2 0.02 250 / 0.55)`): every full-size sign. The first layer is the outer ring in the sign's own color, the second is the shadow.
 - **Small sign** (`box-shadow: 0 0 0 3px <blank>, 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5)`): plaques, link signs, small plates, the tooltip plate.
-- **Flat sign** (`box-shadow: 0 0 0 4px <blank>`): a plaque mounted on another sign, such as an exit number plaque or the exit count on the hero. Ring only, no shadow.
+- **Flat sign** (`box-shadow: 0 0 0 4px <blank>`): a plaque mounted on another sign, such as a vehicle plaque, the interrupt count on the hero, or the plate of measured figures at the foot of the hero. Ring only, no shadow.
 
 ### Named Rules
 **The Hung Sign Rule.** Only signs cast a shadow, and they cast one. A plaque mounted on another sign is flat. Hover moves a sign up by 2px to 4px and leaves the shadow as it is.
@@ -280,7 +280,7 @@ Signs hang in the air. Each one casts a single soft shadow tucked beneath its bo
 
 The sign is the form. It has rounded corners (14px, or 9px when small) and a border set in from the edge, so the sign's own color shows as a thin margin outside the border. Small boxes for state words, matrix cells, and table buttons have gently squared corners (4px). Marks on the road are squares. Drawn glyphs use flat fills, square line ends, and mitred joins: a block arrow rotated to eight directions, and five outline marks for source types (wide rectangle for a manufacturer communication, diamond for a recall, inverted triangle for an investigation, tall rectangle for an owner complaint, circle for anything else).
 
-An exit plaque sits on the top edge of its sign at the right, with its bottom corners squared and its bottom border overlapping the sign by 3px, the way an exit number plaque is mounted on the road.
+A plaque sits on the top edge of its sign at the right, with its bottom corners squared and its bottom border overlapping the sign by 3px, the way an exit number plaque is mounted on the road. What it says is plain: the vehicle's make on a vehicle sign, and the vehicle's place in the set on the hero. The word exit is not used as a label, because a visitor should not have to decode the road to read the page.
 
 Motion is short and eased out (cubic-bezier(0.16, 1, 0.3, 1)): 150ms for color, 200ms for a lift, 500ms for road marks changing state, 550ms for view transitions. The one continuous motion is the dashed centerline on the hero fork, which drifts along the arrow. With reduced motion requested, the drift and the view transitions stop.
 
@@ -323,7 +323,7 @@ A guide sign for one notice. Title at 21px, a line with the source type mark, ty
 Three plaques in the header, each a small sign at least 44px tall in the legend voice (15px to 17px for the name, 14px to 15px for the links). The name is a fact plate. Method and Garage are guide signs. There is no menu on a phone: the name wraps to two lines and the row stays. A skip link appears on focus on a plate white background.
 
 ### Vehicle signs (picker)
-A radio group of small guide signs, one per vehicle. Each carries its exit number on a flat plaque above its top right edge (11px legend), the vehicle's short name at 17px and 800 weight, and its interrupt count at 13px. The chosen sign and its plaque turn to fact plates: white blank, ink legend, ink border.
+A radio group of small guide signs, one per vehicle. Each carries its make on a flat plaque above its top right edge (11px legend), the vehicle's short name at 17px and 800 weight, and its interrupt count at 13px. The chosen sign and its plaque turn to fact plates: white blank, ink legend, ink border.
 
 ### The road (signature)
 A full-bleed asphalt band. A yellow edge line on the through side, a white edge line on the exit side, and a dashed white lane line between the through lanes and the exit lane, all 4px. The three lines turn with the road: across the page on a desktop, down the page on a phone.
@@ -333,12 +333,18 @@ A full-bleed asphalt band. A yellow edge line on the through side, a white edge 
 - **Tooltip:** a small fact plate, 280px wide, with the notice title, type, date, and state. With a finger it pins in place and adds two legend-voice actions.
 
 ### The fork (signature)
-The hero diagram. A white arrow runs straight up for the through route, with two white branches curving right to arrowheads. A dashed guide green centerline drifts along each path. Three counts sit beside the three arrowheads: through, worth knowing, and interrupts, the last on a yellow exit plaque.
+The hero diagram. A white arrow runs straight up for the through route, with two white branches curving right to arrowheads. A dashed guide green centerline drifts along each path. Above it, one line states how many notices entered. Three counts sit beside the three arrowheads, labelled in plain words: ignored, worth knowing, and interrupts, the last on a yellow plaque.
+
+### Measured figures and actions (hero foot)
+Under a 2px white rule at the foot of the hero: a flat white fact plate holding three measured figures (decisions, median response, cost), set out as a distance sign sets out miles, with the name in the legend voice and the figure at 800 weight. Across a row from 640px with 1px ink rules between, down a list on a phone with the figure at the right. Beside it, one flat service sign for the main action, with a block arrow pointing down because it leads further down the page, and one underlined legend link for the method. On a phone this block comes straight after the headline, ahead of the vehicle. The figures are read from the decisions in the build and are never typed in.
+
+### The comparison (signature)
+One real notice beside every vehicle. At the left, a white fact plate with the source type, date, title (two lines at most) and the opening of the source text (three lines at most), a link to the notice, and the controls: two steppers in ink, the position in the legend voice, and a control that stops or restarts the change. At the right, a guide sign read as a distance sign: the six vehicles Jev scored highest, each a row with the vehicle at the left and the relevance in the matrix cell shapes at the right, with a 4px bar along the row's foot whose length is the relevance. The bar is exit yellow for an interrupt, white for worth knowing, and white at 55% for ignored. The remaining vehicles are one line of text. Title and excerpt hold their height so the page does not move when the notice changes. It advances every seven seconds until the visitor steps by hand, holds while pointed at or focused, and does not advance when reduced motion is requested.
 
 ### Tables
 Tables live inside a sign. Heads are in the legend voice at 11px to 12px. Rows are divided by a 1px line (white at 35% on green, ink at 20% on a plate). Numbers are right-aligned, and the relevance column is 800 weight. The selected row or column is tinted white at 10% to 15%. On a white plate the notice title in a row is an in-text link in service blue.
 
-The matrix is a distance sign read sideways, in a fixed layout so the vehicle columns are equal. Each column head is the exit number (15px, 800) over the vehicle's short name (11px, 700, mixed case), set upright on one line. The chosen column head fills white with deep guide green lettering. Model names and document numbers use a non-breaking hyphen so they stay on one line.
+The matrix is a distance sign read sideways, in a fixed layout so the vehicle columns are equal. Each column head is the model year (13px, 700) over the vehicle's short name (11px, 800, mixed case), set upright on one line. The chosen column head fills white with deep guide green lettering. Model names and document numbers use a non-breaking hyphen so they stay on one line.
 
 ### Lists on the sky
 Plain lists use a top rule on each item with 12px above the text: a 1px rule in ink at 25% for ordinary items, a 2px rule in ink at 80% for the list of things the product does not do. Method sections open with a 4px ink rule.
