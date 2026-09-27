@@ -36,7 +36,8 @@ export default function Method() {
   const leftOut = (window?.sources ?? []).reduce((n, s) => n + (s.leftOut?.["text contains a personal detail"] ?? 0), 0);
 
   // A real pair for the example: the first row of the front-page table and the vehicle it scored highest for.
-  const row = home.matrix[0];
+  // Not an owner complaint: the state holds the whole text, and complaints are shown only as excerpts.
+  const row = home.matrix.find((r) => r.type !== "complaint") ?? null;
   const exampleEvent = row ? events.find((e) => e.id === row.id) : events[0];
   const exampleVehicle = row
     ? VEHICLES[row.cells.reduce((best, c, i) => (c[0] > row.cells[best][0] ? i : best), 0)]
@@ -86,6 +87,15 @@ export default function Method() {
             {leftOut > 0
               ? ` ${formatCount(leftOut)} sampled complaints were left out because their text still held a personal detail.`
               : ""}
+          </p>
+          <p>
+            A complaint is one person&apos;s account, not a finding. This site shows the opening of each complaint and
+            links to the full report on NHTSA&apos;s record. If you wrote one and want it taken out, write to the owner
+            through{" "}
+            <a href="https://gregjones.io" className="font-semibold text-service underline">
+              gregjones.io
+            </a>{" "}
+            and it will be left out of the next snapshot.
           </p>
           <p>
             This is a fixed snapshot, not a live feed. Notices published after{" "}

@@ -199,7 +199,7 @@ Compares labels with decisions and writes `data/benchmark.json`. The site shows 
 
 Notices are public records from the National Highway Traffic Safety Administration, Office of Defects Investigation. This project is not affiliated with NHTSA, TypeSafe AI, or any vehicle manufacturer.
 
-No licence has been chosen for the code, and none is claimed over the notices. Complaint narratives were written by members of the public and manufacturer documents by their manufacturers. Decide the code licence and check the reuse terms for the data before the repository is made public.
+The code is under the MIT licence (`LICENSE`). The licence does not cover `data/`. `DATA.md` says where the data comes from, who wrote it, how owner complaints are handled, and how to ask for one to be removed.
 
 ## Provenance of a decision
 

@@ -6,7 +6,7 @@ import { Arrow, TypeMark } from "@/components/glyphs";
 import { VEHICLES, vehicleTitle } from "@/data/vehicles";
 import { allEventIds, buildEvent } from "@/lib/home";
 import { appliesLines } from "@/lib/schema";
-import { displayTitle, formatDate, TYPE_LABEL, TYPE_NOUN } from "@/lib/view";
+import { displayTitle, formatDate, lede, TYPE_LABEL, TYPE_NOUN } from "@/lib/view";
 
 export const dynamicParams = false;
 
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: PageProps<"/event/[id]">): Pr
 }
 
 const SHOWN_MODELS = 14;
+const COMPLAINT_EXCERPT = 400; // characters
 
 export default async function EventPage({ params }: PageProps<"/event/[id]">) {
   const { id } = await params;
@@ -29,6 +30,9 @@ export default async function EventPage({ params }: PageProps<"/event/[id]">) {
   const { event, decisions, defaultVehicle } = built;
   const applies = appliesLines(event);
   const components = event.structuredApplicability?.components ?? [];
+  // Text written by a private individual is shown as an excerpt. See DATA.md.
+  const shown = event.type === "complaint" ? lede(event.text, COMPLAINT_EXCERPT) : event.text;
+  const isExcerpt = shown !== event.text;
 
   return (
     <div className="mx-auto max-w-[1240px] px-4 pt-8 sm:px-6 sm:pt-10">
@@ -84,7 +88,13 @@ export default async function EventPage({ params }: PageProps<"/event/[id]">) {
           <h2 className="legend mt-9 border-t-2 border-ink pt-5 text-[14px]">
             Text of the {TYPE_NOUN[event.type]}
           </h2>
-          <blockquote className="mt-3 max-w-[70ch] text-[17px] leading-[1.65]">{event.text}</blockquote>
+          <blockquote className="mt-3 max-w-[70ch] text-[17px] leading-[1.65]">{shown}</blockquote>
+          {isExcerpt && (
+            <p className="mt-3 max-w-[70ch] text-[15px] leading-relaxed text-ink-soft">
+              An excerpt. Owner complaints are written by members of the public, so this site shows the opening only.
+              Jev was given the whole report, and the whole report is on NHTSA&apos;s record.
+            </p>
+          )}
 
           {event.facts && Object.keys(event.facts).length > 0 && (
             <dl className="mt-8 space-y-4 border-t-2 border-ink pt-5 text-[16px]">
