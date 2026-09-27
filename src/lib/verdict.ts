@@ -5,12 +5,18 @@ import type { Area, Decision, DecisionRecord, Verdict } from "./types";
 // Every threshold is 0.5: the point where Jev considers yes more likely than no.
 // Nothing here was tuned to make the results look better. Tuning waits for a
 // human-labelled benchmark, and any change gets a new version.
-export const THRESHOLDS = {
+export type Rule = { relevanceFloor: number; watchAttention: number; interrupt: number };
+
+// tunedOn names the labelled data the thresholds were chosen against, or null
+// when they were set before any label existed. The benchmark reads it: once it
+// is not null, headline figures come from the holdout split only.
+export const THRESHOLDS: Rule & { version: string; tunedOn: string | null } = {
   version: "t-1",
+  tunedOn: null,
   relevanceFloor: 0.5, // below this the item is treated as not about this vehicle
   watchAttention: 0.5,
   interrupt: 0.5,
-} as const;
+};
 
 type NoulAnswer = { noul?: number };
 type ScoreAnswer = { score?: number };
@@ -18,11 +24,15 @@ type ChoiceAnswer = { choice?: string; confidence?: number };
 
 const num = (v: unknown, fallback = 0) => (typeof v === "number" && Number.isFinite(v) ? v : fallback);
 
-export function verdictFor(relevance: number, attention: number, interrupt: number): Verdict {
-  if (relevance < THRESHOLDS.relevanceFloor) return "IGNORE";
-  if (interrupt >= THRESHOLDS.interrupt) return "INTERRUPT";
-  if (attention >= THRESHOLDS.watchAttention) return "WATCH";
+export function verdictWith(rule: Rule, relevance: number, attention: number, interrupt: number): Verdict {
+  if (relevance < rule.relevanceFloor) return "IGNORE";
+  if (interrupt >= rule.interrupt) return "INTERRUPT";
+  if (attention >= rule.watchAttention) return "WATCH";
   return "IGNORE";
+}
+
+export function verdictFor(relevance: number, attention: number, interrupt: number): Verdict {
+  return verdictWith(THRESHOLDS, relevance, attention, interrupt);
 }
 
 export function derive(record: DecisionRecord): Decision {
