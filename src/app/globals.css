@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* The world is the interstate guide sign system. Colors carry the meanings the
+   road gives them: green guides, yellow demands a lane decision, white states
+   fact, blue points to services, orange marks temporary work. */
+:root {
+  --sky: oklch(0.915 0.012 235);
+  --sky-deep: oklch(0.865 0.016 235);
+  --steel: oklch(0.5 0.016 245);
+  --ink: oklch(0.2 0.012 250);
+  --ink-soft: oklch(0.37 0.018 245);
+
+  --guide: oklch(0.43 0.105 163);
+  --guide-deep: oklch(0.35 0.088 163);
+  --exit: oklch(0.875 0.175 93);
+  --service: oklch(0.37 0.125 258);
+  --work: oklch(0.74 0.17 62);
+
+  --asphalt: oklch(0.285 0.007 260);
+  --asphalt-lift: oklch(0.345 0.008 260);
+  --asphalt-line: oklch(0.53 0.008 260);
+  --paint: oklch(0.965 0.006 100);
+  --paint-soft: oklch(0.8 0.008 260);
+  --plate: oklch(0.995 0.002 100);
+}
+
+@theme inline {
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-steel: var(--steel);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-guide: var(--guide);
+  --color-guide-deep: var(--guide-deep);
+  --color-exit: var(--exit);
+  --color-service: var(--service);
+  --color-work: var(--work);
+  --color-asphalt: var(--asphalt);
+  --color-asphalt-lift: var(--asphalt-lift);
+  --color-asphalt-line: var(--asphalt-line);
+  --color-paint: var(--paint);
+  --color-paint-soft: var(--paint-soft);
+  --color-plate: var(--plate);
+  --font-sans: var(--font-overpass), "Overpass", system-ui, sans-serif;
+  --font-mono: var(--font-overpass-mono), "Overpass Mono", ui-monospace, monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  background: var(--sky);
+  color-scheme: light;
+  scrollbar-color: var(--steel) var(--sky-deep);
+}
+
+body {
+  background: var(--sky);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--exit);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--service);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--exit);
+}
+
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.08em;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Sign construction: a colored blank, a white border set in from the edge,
+   rounded corners, hung in the air with a soft shadow beneath. */
+.sign {
+  --blank: var(--guide);
+  --legend: #fff;
+  --rule: #fff;
+  background: var(--blank);
+  color: var(--legend);
+  border: 4px solid var(--rule);
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 4px var(--blank),
+    0 22px 28px -20px oklch(0.2 0.02 250 / 0.55);
+}
+
+.sign-exit {
+  --blank: var(--exit);
+  --legend: var(--ink);
+  --rule: var(--ink);
+}
+
+.sign-fact {
+  --blank: var(--plate);
+  --legend: var(--ink);
+  --rule: var(--ink);
+}
+
+.sign-service {
+  --blank: var(--service);
+}
+
+.sign-work {
+  --blank: var(--work);
+  --legend: var(--ink);
+  --rule: var(--ink);
+}
+
+.sign-thru {
+  --blank: var(--asphalt-lift);
+}
+
+.sign-sm {
+  border-width: 3px;
+  border-radius: 9px;
+  box-shadow:
+    0 0 0 3px var(--blank),
+    0 12px 16px -12px oklch(0.2 0.02 250 / 0.5);
+}
+
+.sign-flat {
+  box-shadow: 0 0 0 4px var(--blank);
+}
+
+/* The legend voice: capitals for commands, as on the road. */
+.legend {
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+@keyframes traffic {
+  to {
+    stroke-dashoffset: -64;
+  }
+}
+
+.traffic {
+  stroke-dasharray: 10 22;
+  animation: traffic 1.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .traffic {
+    animation: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+::view-transition-group(*) {
+  animation-duration: 0.55s;
+  animation-timing-function: var(--ease-out-expo);
+}

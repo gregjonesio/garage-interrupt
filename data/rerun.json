@@ -1,0 +1,12 @@
+{
+ "comparedAt": "2026-09-27T02:38:41.343Z",
+ "pairs": 24080,
+ "identical": 6742,
+ "stateChanged": 3,
+ "areaChanged": 230,
+ "largestChangePoints": 28,
+ "changeUnder1": 11096,
+ "change1to5": 12672,
+ "change5to10": 300,
+ "changeOver10": 12
+}

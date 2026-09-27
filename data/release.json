@@ -1,0 +1,51 @@
+{
+ "frozenAt": "2026-09-27T02:37:57.692Z",
+ "window": {
+  "from": "2026-08-27",
+  "to": "2026-09-25"
+ },
+ "contract": "2b7269e9965f7ec3",
+ "model": "jev-1.13.0",
+ "schemaVersion": "gi-1",
+ "thresholds": "t-1",
+ "vehicles": {
+  "count": 16,
+  "hash": "f5bba3e5a3ab3890"
+ },
+ "events": {
+  "count": 1506,
+  "sha256": "e13f3d101adf65ba98e315c880419ebe51abe937d0fc6af39b20e502f85c4ae4",
+  "byType": {
+   "complaint": 519,
+   "manufacturer_communication": 924,
+   "recall": 58,
+   "investigation": 5
+  }
+ },
+ "decisions": {
+  "pairs": 24096,
+  "files": {
+   "bmw-x5.jsonl": "27d825081ccf86b9b8fe0ac60f869b78553d912dab6cc3fe7c87c769a61f1b66",
+   "chevy-silverado.jsonl": "b5566d5d9cde50fcc219ecd4b967fc08527e8efd83a32afb0e89955f2fd084ea",
+   "ford-bronco.jsonl": "d16d44541c3752ede57d42fc00d0f1f28e043a740af4b4349417e08ac55b7a3a",
+   "ford-f150.jsonl": "c71f95c2f85a1c5be45e3c493ecfd9688272a6487bb3ff2c0039f4c22d19c327",
+   "ford-mach-e.jsonl": "1b4c9d218a50abafedf882bc9aae93b6d39407c1ac2fea8c2124c6f70e8feaa0",
+   "honda-crv.jsonl": "6cb49523a394a19bf82c090a81d0de98af0ff82cf29177ab96c904e0ff3bc939",
+   "hyundai-ioniq5.jsonl": "4a4b713e01d8bd42074a6d70f4ee5c26f5a01bd63d3c4fcc20129869e1df0bea",
+   "jeep-wrangler.jsonl": "01ae324078fde016feb217d417e2bb5487a1de146c2ffe927f17a9392c108aa7",
+   "kia-telluride.jsonl": "5880370f12522ccef4989172a9b45dc3d50e61f7f1ec67a4b84239d7cb160d65",
+   "porsche-911.jsonl": "7665b85b9c0befbad537fc0f1b9817dd7ce04518ccaeee91a7fb9575b1c7ca76",
+   "ram-2500.jsonl": "446907de4276a47caf04cee3a883af27f83bc0b4ffcf64de00bf01b43af91e9d",
+   "rivian-r1s.jsonl": "093e9e728b809be25b44bc33bbdbee292d96bdd3f91bf4bee05d77b8368a58b2",
+   "subaru-outback.jsonl": "d0373cdbb0e9d2ee001360d730f8549800d73f531fa060422d4c952a4816acbe",
+   "tesla-model-x.jsonl": "4b07ff059a4e53469a652c5119c7f963570a06532c66a232041858d7a42f5cb2",
+   "toyota-camry.jsonl": "092877670c29c1106ded081a43428aabb847426cffa37502b3732dd6af9f64b4",
+   "toyota-tacoma.jsonl": "c2908303e7b1f18a90891601f8b907fc74a11d41c766864894cc9821f406601a"
+  }
+ },
+ "provenance": {
+  "recorded": 24096,
+  "attested": 0,
+  "basis": null
+ }
+}

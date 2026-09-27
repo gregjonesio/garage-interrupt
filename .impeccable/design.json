@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T23:54:26Z",
+  "title": "Design System: Garage Interrupt",
+  "extensions": {
+    "colorMeta": {
+      "guide": {
+        "role": "primary",
+        "displayName": "Guide Green",
+        "canonical": "oklch(0.43 0.105 163)",
+        "tonalRamp": ["oklch(0.15 0.105 163)", "oklch(0.26 0.105 163)", "oklch(0.38 0.105 163)", "oklch(0.49 0.105 163)", "oklch(0.61 0.105 163)", "oklch(0.72 0.105 163)", "oklch(0.84 0.105 163)", "oklch(0.95 0.105 163)"]
+      },
+      "guide-deep": {
+        "role": "primary",
+        "displayName": "Deep Guide Green",
+        "canonical": "oklch(0.35 0.088 163)",
+        "tonalRamp": ["oklch(0.15 0.088 163)", "oklch(0.26 0.088 163)", "oklch(0.38 0.088 163)", "oklch(0.49 0.088 163)", "oklch(0.61 0.088 163)", "oklch(0.72 0.088 163)", "oklch(0.84 0.088 163)", "oklch(0.95 0.088 163)"]
+      },
+      "exit": {
+        "role": "secondary",
+        "displayName": "Exit Yellow",
+        "canonical": "oklch(0.875 0.175 93)",
+        "tonalRamp": ["oklch(0.15 0.175 93)", "oklch(0.26 0.175 93)", "oklch(0.38 0.175 93)", "oklch(0.49 0.175 93)", "oklch(0.61 0.175 93)", "oklch(0.72 0.175 93)", "oklch(0.84 0.175 93)", "oklch(0.95 0.175 93)"]
+      },
+      "service": {
+        "role": "tertiary",
+        "displayName": "Service Blue",
+        "canonical": "oklch(0.37 0.125 258)",
+        "tonalRamp": ["oklch(0.15 0.125 258)", "oklch(0.26 0.125 258)", "oklch(0.38 0.125 258)", "oklch(0.49 0.125 258)", "oklch(0.61 0.125 258)", "oklch(0.72 0.125 258)", "oklch(0.84 0.125 258)", "oklch(0.95 0.125 258)"]
+      },
+      "work": {
+        "role": "tertiary",
+        "displayName": "Work Orange",
+        "canonical": "oklch(0.74 0.17 62)",
+        "tonalRamp": ["oklch(0.15 0.17 62)", "oklch(0.26 0.17 62)", "oklch(0.38 0.17 62)", "oklch(0.49 0.17 62)", "oklch(0.61 0.17 62)", "oklch(0.72 0.17 62)", "oklch(0.84 0.17 62)", "oklch(0.95 0.17 62)"]
+      },
+      "worth-knowing-mark": {
+        "role": "tertiary",
+        "displayName": "Lit Green",
+        "canonical": "oklch(0.74 0.16 158)",
+        "tonalRamp": ["oklch(0.15 0.16 158)", "oklch(0.26 0.16 158)", "oklch(0.38 0.16 158)", "oklch(0.49 0.16 158)", "oklch(0.61 0.16 158)", "oklch(0.72 0.16 158)", "oklch(0.84 0.16 158)", "oklch(0.95 0.16 158)"]
+      },
+      "sky": {
+        "role": "neutral",
+        "displayName": "Overcast Sky",
+        "canonical": "oklch(0.915 0.012 235)",
+        "tonalRamp": ["oklch(0.15 0.012 235)", "oklch(0.26 0.012 235)", "oklch(0.38 0.012 235)", "oklch(0.49 0.012 235)", "oklch(0.61 0.012 235)", "oklch(0.72 0.012 235)", "oklch(0.84 0.012 235)", "oklch(0.95 0.012 235)"]
+      },
+      "plate": {
+        "role": "neutral",
+        "displayName": "Fact Plate White",
+        "canonical": "oklch(0.995 0.002 100)",
+        "tonalRamp": ["oklch(0.15 0.002 100)", "oklch(0.26 0.002 100)", "oklch(0.38 0.002 100)", "oklch(0.49 0.002 100)", "oklch(0.61 0.002 100)", "oklch(0.72 0.002 100)", "oklch(0.84 0.002 100)", "oklch(0.95 0.002 100)"]
+      },
+      "legend-white": {
+        "role": "neutral",
+        "displayName": "Legend White",
+        "canonical": "#fff",
+        "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.26 0 0)", "oklch(0.38 0 0)", "oklch(0.49 0 0)", "oklch(0.61 0 0)", "oklch(0.72 0 0)", "oklch(0.84 0 0)", "oklch(0.95 0 0)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.2 0.012 250)",
+        "tonalRamp": ["oklch(0.15 0.012 250)", "oklch(0.26 0.012 250)", "oklch(0.38 0.012 250)", "oklch(0.49 0.012 250)", "oklch(0.61 0.012 250)", "oklch(0.72 0.012 250)", "oklch(0.84 0.012 250)", "oklch(0.95 0.012 250)"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(0.37 0.018 245)",
+        "tonalRamp": ["oklch(0.15 0.018 245)", "oklch(0.26 0.018 245)", "oklch(0.38 0.018 245)", "oklch(0.49 0.018 245)", "oklch(0.61 0.018 245)", "oklch(0.72 0.018 245)", "oklch(0.84 0.018 245)", "oklch(0.95 0.018 245)"]
+      },
+      "asphalt": {
+        "role": "neutral",
+        "displayName": "Asphalt",
+        "canonical": "oklch(0.285 0.007 260)",
+        "tonalRamp": ["oklch(0.15 0.007 260)", "oklch(0.26 0.007 260)", "oklch(0.38 0.007 260)", "oklch(0.49 0.007 260)", "oklch(0.61 0.007 260)", "oklch(0.72 0.007 260)", "oklch(0.84 0.007 260)", "oklch(0.95 0.007 260)"]
+      },
+      "asphalt-lift": {
+        "role": "neutral",
+        "displayName": "Lifted Asphalt",
+        "canonical": "oklch(0.345 0.008 260)",
+        "tonalRamp": ["oklch(0.15 0.008 260)", "oklch(0.26 0.008 260)", "oklch(0.38 0.008 260)", "oklch(0.49 0.008 260)", "oklch(0.61 0.008 260)", "oklch(0.72 0.008 260)", "oklch(0.84 0.008 260)", "oklch(0.95 0.008 260)"]
+      },
+      "asphalt-line": {
+        "role": "neutral",
+        "displayName": "Asphalt Line",
+        "canonical": "oklch(0.53 0.008 260)",
+        "tonalRamp": ["oklch(0.15 0.008 260)", "oklch(0.26 0.008 260)", "oklch(0.38 0.008 260)", "oklch(0.49 0.008 260)", "oklch(0.61 0.008 260)", "oklch(0.72 0.008 260)", "oklch(0.84 0.008 260)", "oklch(0.95 0.008 260)"]
+      },
+      "paint": {
+        "role": "neutral",
+        "displayName": "Paint",
+        "canonical": "oklch(0.965 0.006 100)",
+        "tonalRamp": ["oklch(0.15 0.006 100)", "oklch(0.26 0.006 100)", "oklch(0.38 0.006 100)", "oklch(0.49 0.006 100)", "oklch(0.61 0.006 100)", "oklch(0.72 0.006 100)", "oklch(0.84 0.006 100)", "oklch(0.95 0.006 100)"]
+      },
+      "paint-soft": {
+        "role": "neutral",
+        "displayName": "Soft Paint",
+        "canonical": "oklch(0.8 0.008 260)",
+        "tonalRamp": ["oklch(0.15 0.008 260)", "oklch(0.26 0.008 260)", "oklch(0.38 0.008 260)", "oklch(0.49 0.008 260)", "oklch(0.61 0.008 260)", "oklch(0.72 0.008 260)", "oklch(0.84 0.008 260)", "oklch(0.95 0.008 260)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero headline. Page headlines on the method, garage, and vehicle pages use the same weight and line-height at a slightly smaller clamp." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings on the home page, held to 18ch to 24ch so they break into two lines." },
+      "title": { "displayName": "Title", "purpose": "Secondary headings and the vehicle name on the hero." },
+      "figure": { "displayName": "Figure", "purpose": "Counts and probabilities on signs, with tabular numerals." },
+      "body": { "displayName": "Body", "purpose": "Running text, held between 52ch and 72ch." },
+      "body-small": { "displayName": "Body Small", "purpose": "Supporting lines on signs, captions, and footer text." },
+      "label": { "displayName": "Legend", "purpose": "The legend voice: uppercase labels, table heads, plaques, and commands, 11px to 15px." },
+      "mono": { "displayName": "Mono", "purpose": "State and question JSON, answer type names, NHTSA record IDs, and the model name." }
+    },
+    "shadows": [
+      { "name": "sign", "value": "0 0 0 4px var(--blank), 0 22px 28px -20px oklch(0.2 0.02 250 / 0.55)", "purpose": "Every full-size sign. The first layer is the outer ring in the sign's own color, the second is the shadow beneath." },
+      { "name": "sign-sm", "value": "0 0 0 3px var(--blank), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5)", "purpose": "Plaques, link signs, small plates, the tooltip plate." },
+      { "name": "sign-flat", "value": "0 0 0 4px var(--blank)", "purpose": "A plaque mounted on another sign. Ring only, no shadow." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Easing for lifts, road marks changing state, and view transitions." },
+      { "name": "duration-color", "value": "150ms", "purpose": "Color changes on hover for the stepper and matrix column heads." },
+      { "name": "duration-lift", "value": "200ms", "purpose": "Sign lift and arrow nudge on hover, marker scale on hover." },
+      { "name": "duration-mark", "value": "500ms", "purpose": "Road marks changing color and size when the vehicle changes." },
+      { "name": "duration-view-transition", "value": "550ms", "purpose": "View transition groups." },
+      { "name": "traffic", "value": "stroke-dasharray 10 22; stroke-dashoffset to -64; 1.6s linear infinite (2.6s and 3.4s on the branches)", "purpose": "The dashed centerline drifting along the hero fork. Stops under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Notice Sign",
+      "kind": "card",
+      "refersTo": "sign-guide",
+      "description": "A guide sign for one notice that reached a vehicle. An interrupt carries the yellow panel along its bottom edge, as EXIT ONLY does.",
+      "html": "<a class='ds-notice' href='#'><div class='ds-notice-body'><h3 class='ds-notice-title'>Emissions communication N262558690-01</h3><p class='ds-notice-meta'><svg aria-hidden='true' viewBox='0 0 16 16' width='14' height='14'><rect x='1.5' y='3.5' width='13' height='9' fill='none' stroke='currentColor' stroke-width='2' stroke-linejoin='miter'/></svg>Manufacturer communication. Sep 2, 2026. CHEVROLET</p><blockquote class='ds-notice-lede'>Emission Recall. General Motors has decided to conduct a Voluntary Emission Recall. ...</blockquote><dl class='ds-notice-figures'><div><dt>Relevance</dt><dd>91%</dd></div><div><dt>Attention</dt><dd>83%</dd></div><div><dt>Interrupt</dt><dd>77%</dd></div><div><dt>Area</dt><dd>Engine</dd></div></dl></div><p class='ds-notice-band'><span>Interrupt. Open the notice</span><svg class='ds-notice-arrow' aria-hidden='true' viewBox='0 0 24 24' width='20' height='20'><path d='M12 1.5 21 12h-5.6v10.5H8.6V12H3z' fill='currentColor'/></svg></p></a>",
+      "css": ".ds-notice { display: flex; flex-direction: column; overflow: hidden; max-width: 580px; background: var(--guide); color: #fff; border: 4px solid #fff; border-radius: 14px; box-shadow: 0 0 0 4px var(--guide), 0 22px 28px -20px oklch(0.2 0.02 250 / 0.55); font-family: Overpass, system-ui, sans-serif; font-feature-settings: 'tnum' 1; text-decoration: none; transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-notice:hover { transform: translateY(-4px); } .ds-notice:focus-visible { outline: 3px solid var(--exit); outline-offset: 3px; } .ds-notice-body { padding: 24px; } .ds-notice-title { margin: 0; font-size: 21px; font-weight: 800; line-height: 1.15; } .ds-notice-meta { margin: 8px 0 0; font-size: 15px; line-height: 1.375; color: rgb(255 255 255 / 0.9); } .ds-notice-meta svg { margin-right: 8px; vertical-align: -2px; } .ds-notice-lede { margin: 16px 0 0; padding-top: 12px; border-top: 2px solid rgb(255 255 255 / 0.6); font-size: 15px; line-height: 1.625; } .ds-notice-figures { display: grid; grid-template-columns: repeat(3, minmax(0, 0.8fr)) minmax(0, 1.4fr); gap: 20px 12px; margin: 0; padding-top: 24px; } .ds-notice-figures dt { font-size: 12px; font-weight: 800; letter-spacing: 0.035em; text-transform: uppercase; line-height: 1; } .ds-notice-figures dd { margin: 6px 0 0; font-size: 22px; font-weight: 800; line-height: 1; } .ds-notice-band { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0; padding: 12px 24px; border-top: 4px solid #fff; background: var(--exit); color: var(--ink); font-size: 14px; font-weight: 800; letter-spacing: 0.035em; text-transform: uppercase; } .ds-notice-arrow { transform: rotate(135deg); transition: transform 200ms; } .ds-notice:hover .ds-notice-arrow { transform: translateX(4px) rotate(135deg); }"
+    },
+    {
+      "name": "Fact Plate",
+      "kind": "card",
+      "refersTo": "sign-fact-sm",
+      "description": "A white plate that states a fact or holds source text. Shown here as one of the five question plates.",
+      "html": "<div class='ds-plate'><div><p class='ds-plate-name'>Relevance</p><p class='ds-plate-type'>noul</p></div><div><p class='ds-plate-text'>Does this new information apply or appear relevant to this specific vehicle configuration?</p><p class='ds-plate-note'>A probability from 0 to 1</p></div></div>",
+      "css": ".ds-plate { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 24px; max-width: 620px; padding: 16px 20px; background: var(--plate); color: var(--ink); border: 3px solid var(--ink); border-radius: 9px; box-shadow: 0 0 0 3px var(--plate), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5); font-family: Overpass, system-ui, sans-serif; } .ds-plate p { margin: 0; } .ds-plate-name { font-size: 14px; font-weight: 800; letter-spacing: 0.035em; text-transform: uppercase; } .ds-plate-type { margin-top: 2px; font-family: 'Overpass Mono', ui-monospace, monospace; font-size: 13px; text-transform: uppercase; color: var(--ink-soft); } .ds-plate-text { font-size: 17px; font-weight: 600; line-height: 1.375; } .ds-plate-note { margin-top: 4px; font-size: 14px; color: var(--ink-soft); }"
+    },
+    {
+      "name": "Service Sign Link",
+      "kind": "button",
+      "refersTo": "sign-service-link",
+      "description": "A small blue service sign that points to the source record or to the method page.",
+      "html": "<a class='ds-service-link' href='#'>View original source on NHTSA.gov<svg aria-hidden='true' viewBox='0 0 24 24' width='18' height='18'><path d='M12 1.5 21 12h-5.6v10.5H8.6V12H3z' fill='currentColor'/></svg></a>",
+      "css": ".ds-service-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 12px 20px; background: var(--service); color: #fff; border: 3px solid #fff; border-radius: 9px; box-shadow: 0 0 0 3px var(--service), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5); font-family: Overpass, system-ui, sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 0.035em; text-transform: uppercase; text-decoration: none; } .ds-service-link svg { transform: rotate(45deg); } .ds-service-link:focus-visible { outline: 3px solid var(--exit); outline-offset: 3px; }"
+    },
+    {
+      "name": "Work Zone Sign",
+      "kind": "card",
+      "refersTo": "sign-work",
+      "description": "An orange sign for anything unfinished or not measured. Once the work is done the same panel becomes a white fact plate.",
+      "html": "<p class='ds-work'>This notice has not been judged for this vehicle yet.</p>",
+      "css": ".ds-work { margin: 0; max-width: 520px; padding: 16px 20px; background: var(--work); color: var(--ink); border: 3px solid var(--ink); border-radius: 9px; box-shadow: 0 0 0 3px var(--work), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5); font-family: Overpass, system-ui, sans-serif; font-size: 16px; }"
+    },
+    {
+      "name": "Header Plaques",
+      "kind": "nav",
+      "refersTo": "sign-guide-sm",
+      "description": "The site header: the name on a white plate, two green navigation plaques.",
+      "html": "<header class='ds-header'><a class='ds-plaque ds-plaque-fact' href='#'>Garage Interrupt</a><nav class='ds-header-nav' aria-label='Site'><a class='ds-plaque' href='#'>Method</a><a class='ds-plaque' href='#'>Garage</a></nav></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px; font-family: Overpass, system-ui, sans-serif; } .ds-header-nav { display: flex; align-items: center; gap: 16px; } .ds-plaque { display: inline-flex; align-items: center; min-height: 44px; padding: 2px 12px 0; background: var(--guide); color: #fff; border: 3px solid #fff; border-radius: 9px; box-shadow: 0 0 0 3px var(--guide), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5); font-size: 15px; font-weight: 800; letter-spacing: 0.035em; line-height: 1; text-transform: uppercase; text-decoration: none; } .ds-plaque-fact { background: var(--plate); color: var(--ink); border-color: var(--ink); box-shadow: 0 0 0 3px var(--plate), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5); font-size: 17px; } .ds-plaque:focus-visible { outline: 3px solid var(--service); outline-offset: 3px; }"
+    },
+    {
+      "name": "Vehicle Signs",
+      "kind": "chip",
+      "refersTo": "vehicle-plaque",
+      "description": "The vehicle picker. Each sign carries its exit number on a plaque above the top edge. The chosen one turns to a white plate.",
+      "html": "<div class='ds-vehicles' role='radiogroup' aria-label='Vehicle'><button class='ds-vehicle' type='button' role='radio' aria-checked='false'><span class='ds-vehicle-tab-row'><span class='ds-vehicle-tab'>Exit 7</span></span><span class='ds-vehicle-face'><span class='ds-vehicle-name'>Wrangler</span><span class='ds-vehicle-count'>1 interrupt</span></span></button><button class='ds-vehicle ds-vehicle-on' type='button' role='radio' aria-checked='true'><span class='ds-vehicle-tab-row'><span class='ds-vehicle-tab'>Exit 8</span></span><span class='ds-vehicle-face'><span class='ds-vehicle-name'>Silverado</span><span class='ds-vehicle-count'>8 interrupts</span></span></button></div>",
+      "css": ".ds-vehicles { display: flex; gap: 12px; padding: 4px 4px 16px; font-family: Overpass, system-ui, sans-serif; } .ds-vehicle { --ds-blank: var(--guide); --ds-legend: #fff; min-width: 136px; padding: 0; background: none; border: 0; text-align: left; cursor: pointer; color: var(--ds-legend); font: inherit; } .ds-vehicle-on { --ds-blank: var(--plate); --ds-legend: var(--ink); } .ds-vehicle-tab-row { display: flex; justify-content: flex-end; padding-right: 12px; } .ds-vehicle-tab { margin-bottom: -3px; padding: 6px 10px 2px; background: var(--ds-blank); border: 3px solid var(--ds-legend); border-radius: 9px 9px 0 0; box-shadow: 0 0 0 3px var(--ds-blank); font-size: 11px; font-weight: 800; letter-spacing: 0.035em; line-height: 1; text-transform: uppercase; } .ds-vehicle-face { display: block; padding: 12px 12px 10px; background: var(--ds-blank); border: 3px solid var(--ds-legend); border-radius: 9px; box-shadow: 0 0 0 3px var(--ds-blank), 0 12px 16px -12px oklch(0.2 0.02 250 / 0.5); transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-vehicle:hover .ds-vehicle-face { transform: translateY(-2px); } .ds-vehicle-name { display: block; font-size: 17px; font-weight: 800; line-height: 1.25; } .ds-vehicle-count { display: block; margin-top: 4px; font-size: 13px; line-height: 1.25; } .ds-vehicle:focus-visible { outline: 3px solid var(--service); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "State Words",
+      "kind": "chip",
+      "refersTo": "state-interrupt",
+      "description": "The three states on a guide sign: a filled box, an empty box, no box.",
+      "html": "<div class='ds-states'><span class='ds-state ds-state-interrupt'>Interrupt</span><span class='ds-state ds-state-watch'>Worth knowing</span><span class='ds-state ds-state-ignored'>Ignored</span></div>",
+      "css": ".ds-states { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--guide); font-family: Overpass, system-ui, sans-serif; } .ds-state { display: inline-block; padding: 4px 8px 2px; border-radius: 4px; font-size: 11px; font-weight: 800; letter-spacing: 0.035em; line-height: 1; text-transform: uppercase; } .ds-state-interrupt { background: var(--exit); color: var(--ink); border: 2px solid var(--ink); } .ds-state-watch { color: #fff; border: 2px solid #fff; } .ds-state-ignored { padding-left: 0; padding-right: 0; color: rgb(255 255 255 / 0.85); }"
+    },
+    {
+      "name": "In-text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "A link inside running text or a table on a white plate: service blue, underlined. A link to a filed document carries a small arrow pointing up and right.",
+      "html": "<p class='ds-linkline'>No person has checked either list. <a class='ds-link' href='#'>All pairs are listed on the method page.</a></p><p class='ds-linkline'><a class='ds-link ds-link-doc' href='#'>Recall 573 Report<svg aria-hidden='true' viewBox='0 0 24 24' width='14' height='14'><path d='M12 1.5 21 12h-5.6v10.5H8.6V12H3z' fill='currentColor'/></svg></a></p>",
+      "css": ".ds-linkline { margin: 0; padding: 8px 16px; background: var(--plate); color: var(--ink); font-family: Overpass, system-ui, sans-serif; font-size: 17px; line-height: 1.625; } .ds-link { color: var(--service); font-weight: 700; text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 0.08em; } .ds-link-doc { display: inline-flex; align-items: center; gap: 8px; padding: 8px 0; font-size: 16px; font-weight: 600; } .ds-link-doc svg { transform: rotate(45deg); } .ds-link:focus-visible { outline: 3px solid var(--service); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Matrix Column Head",
+      "kind": "custom",
+      "refersTo": "matrix-head",
+      "description": "A vehicle column head in the matrix: exit number over the vehicle name in mixed case. The chosen one fills white.",
+      "html": "<div class='ds-mhead-row'><button class='ds-mhead' type='button' aria-pressed='false' aria-label='Exit 2, 2022 Ford F-150'><span class='ds-mhead-exit'>2</span><span class='ds-mhead-name'>F&#8209;150</span></button><button class='ds-mhead ds-mhead-on' type='button' aria-pressed='true' aria-label='Exit 8, 2022 Chevrolet Silverado 1500'><span class='ds-mhead-exit'>8</span><span class='ds-mhead-name'>Silverado</span></button></div>",
+      "css": ".ds-mhead-row { display: flex; gap: 4px; padding: 12px; background: var(--guide); font-family: Overpass, system-ui, sans-serif; } .ds-mhead { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 48px; width: 64px; padding: 6px 0; background: transparent; color: #fff; border: 0; border-radius: 4px; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-mhead:hover { background: rgb(255 255 255 / 0.15); } .ds-mhead-on, .ds-mhead-on:hover { background: #fff; color: var(--guide-deep); } .ds-mhead-exit { font-size: 15px; font-weight: 800; line-height: 1; } .ds-mhead-name { margin-top: 4px; font-size: 11px; font-weight: 700; line-height: 1; white-space: nowrap; } .ds-mhead:focus-visible { outline: 3px solid var(--exit); outline-offset: 3px; }"
+    },
+    {
+      "name": "Road Marks",
+      "kind": "custom",
+      "refersTo": "exit-panel",
+      "description": "The road: every notice is one square mark in the through lanes, and the marks that reached the vehicle repeat in the exit lane as links.",
+      "html": "<div class='ds-road'><div class='ds-road-lanes'><div class='ds-road-thru'><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick ds-tick-interrupt'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick ds-tick-watch'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i><i class='ds-tick'></i></div><div class='ds-road-exit'><a class='ds-marker ds-marker-interrupt' href='#' aria-label='Interrupt'></a><a class='ds-marker ds-marker-watch' href='#' aria-label='Worth knowing'></a></div></div></div>",
+      "css": ".ds-road { padding: 24px; background: var(--asphalt); color: var(--paint); font-family: Overpass, system-ui, sans-serif; } .ds-road-lanes { border-top: 4px solid var(--exit); border-bottom: 4px solid var(--paint); padding: 12px 0; } .ds-road-thru { display: flex; flex-wrap: wrap; gap: 2px; padding: 8px 4px; } .ds-tick { display: block; width: 7px; height: 7px; background: var(--asphalt-line); transition: background-color 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tick-watch { position: relative; z-index: 1; background: oklch(0.74 0.16 158); transform: scale(1.7); outline: 1px solid var(--paint); } .ds-tick-interrupt { position: relative; z-index: 2; background: var(--exit); transform: scale(1.7); border-radius: 1px; box-shadow: 0 0 0 1px var(--asphalt); } .ds-road-exit { display: flex; gap: 6px; padding-top: 10px; border-top: 4px dashed var(--paint); } .ds-marker { display: block; width: 28px; height: 28px; border-radius: 3px; transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-marker:hover { transform: scale(1.1); } .ds-marker-interrupt { background: var(--exit); border: 3px solid var(--ink); outline: 2px solid var(--paint); } .ds-marker-watch { background: oklch(0.74 0.16 158); border: 2px solid var(--paint); } .ds-marker:focus-visible { outline: 3px solid var(--exit); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Interchange",
+    "overview": "Garage Interrupt is an interchange for notices. Every notice travels the same road, and only the few that matter to one vehicle take its exit. The visual system is the interstate guide sign system under an overcast sky: green guide panels with a white border set in from the edge, yellow exit panels, white fact plates, blue service signs, orange work-zone signs, and one asphalt band of painted marks. The lettering is Overpass, a face drawn from highway signage.\n\nThe page reads the way a driver reads a gantry. One large guide sign carries the claim and the counts for a named vehicle. A row of smaller signs, each with its exit number on a plaque, lets the visitor change vehicle. Below, the road holds every notice as a painted mark, and the marks that reached the chosen vehicle light up and repeat in the exit lane as links. Density is moderate on the signs and high on the road, where every notice in the period is one mark in a single band.\n\nThe system refuses the dark AI dashboard of metric cards. Counts live on signs and on the road. Surfaces are flat, the sky is pale, and the only dark surface is the asphalt.",
+    "keyCharacteristics": [
+      "Every container is a sign: a colored blank, an inset border, rounded corners, one soft shadow beneath.",
+      "Color carries road meaning and nothing else.",
+      "Every state has a second signal in shape, size, or words.",
+      "One type family, with capitals kept for the legend voice.",
+      "Source text is quoted as written and sits under a rule or on a white plate.",
+      "Light color scheme only (`color-scheme: light`)."
+    ],
+    "rules": [
+      { "name": "The Road Meaning Rule", "body": "A color means what the road says it means, on every surface. Green guides. Yellow interrupts. White states fact and holds source text. Blue points the way: to a source record, to the method, or to a notice. Orange marks what is unfinished or not measured, and gives way to a white plate once the work is done. A color never appears for its looks.", "section": "colors" },
+      { "name": "The Yellow Is The Exit Rule", "body": "A yellow fill says interrupt and nothing else. Selection is a white plate, hover is a lift or a white fill, and emphasis is weight. Outside that, yellow appears in three utility places only: the road's left edge line, the focus outline on dark surfaces, and the text selection highlight.", "section": "colors" },
+      { "name": "The Second Signal Rule", "body": "Every state is told apart by shape or words as well as color. Interrupt is a filled box with a dark border, worth knowing is an empty box with a border, ignored has no box. On the road the three differ in size and outline. Each source type has its own outline mark.", "section": "colors" },
+      { "name": "The Legend Rule", "body": "Capitals belong to the legend voice alone: labels, table heads, plaques, and commands. Headlines and body are sentence case. Vehicle names are destinations and stay in mixed case, even as column heads. Source titles are shown as the source wrote them, capitals included.", "section": "typography" },
+      { "name": "The One Road Rule", "body": "The asphalt band is the only full-bleed surface and the only dark one. Everything else sits inside the 1240px column on the sky.", "section": "layout" },
+      { "name": "The Hung Sign Rule", "body": "Only signs cast a shadow, and they cast one. A plaque mounted on another sign is flat. Hover moves a sign up by 2px to 4px and leaves the shadow as it is.", "section": "elevation" },
+      { "name": "The Flat Fill Rule", "body": "Every surface is one flat fill. No gradients, no glows, no glass. A tint on a sign is white at 10% to 15% opacity, used for the selected row or column.", "section": "elevation" },
+      { "name": "The Inset Border Rule", "body": "A sign is a colored blank with its border set in from the edge: a 4px border in the legend color, then a 4px ring of the blank color outside it. Small signs use 3px and 3px. The border is never flush with the outer edge.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do pick a sign by what it says: guide green for guidance and notices that reached a vehicle, a white plate for facts and source text, service blue for signs and in-text links that point to NHTSA, the method, or a notice, work orange for anything unfinished or unmeasured, asphalt grey for an ignored verdict.",
+      "Do turn a work sign into a white fact plate once the thing it marks has been measured or finished.",
+      "Do show selection with a white plate or a white fill, as the chosen vehicle sign and the chosen matrix column do.",
+      "Do give every state a second signal: a box shape, a border, a size, or the state word itself.",
+      "Do build every sign with the inset border: 4px border, 4px outer ring, 14px corners, or 3px, 3px, and 9px for a small sign.",
+      "Do set labels and commands in the legend voice (800, uppercase, 0.035em) and everything else in sentence case.",
+      "Do keep labelled controls at least 44px tall.",
+      "Do keep source text in the source's words, in a blockquote, on a fact plate or under a rule on a guide sign.",
+      "Do switch the focus outline from service blue to exit yellow on green, blue, and asphalt surfaces.",
+      "Do stop the traffic drift and view transitions when reduced motion is requested."
+    ],
+    "donts": [
+      "Don't use a yellow fill for selection, hover, highlights, badges, or decoration. Yellow fill means interrupt.",
+      "Don't use gradients, glows, blurs, or glass. Fills are flat.",
+      "Don't build the dark AI dashboard of metric cards. Counts live on signs and on the road, not in a grid of stat tiles.",
+      "Don't rely on color alone for any state.",
+      "Don't set headlines in capitals or apply the legend voice to running text.",
+      "Don't write decorative or invented copy inside a sign. Text about a notice is the source's own or a fixed template.",
+      "Don't put a shadow on anything that is not a sign, and don't stack shadows.",
+      "Don't introduce a hue the road does not use.",
+      "Don't add a second type family. Overpass and Overpass Mono carry everything."
+    ]
+  }
+}

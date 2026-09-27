@@ -1,0 +1,65 @@
+{
+ "from": "2026-08-27",
+ "to": "2026-09-25",
+ "ingestedAt": "2026-09-27T00:17:00.012Z",
+ "sources": [
+  {
+   "id": "nhtsa-communications",
+   "name": "NHTSA Manufacturer Communications",
+   "rule": "Every manufacturer communication NHTSA added to its file in the window, all manufacturers.",
+   "events": 924,
+   "rowsRead": 770833,
+   "leftOut": {},
+   "file": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/tsbs/TSBS_RECEIVED_2025-2026.zip",
+    "bytes": 11830186,
+    "sha256": "61b37ae1e98e9ee99e2943055d33aba2cab520810f53b017813dc1fc03becd22",
+    "retrievedAt": "2026-09-26T22:38:55.434Z"
+   }
+  },
+  {
+   "id": "nhtsa-recalls",
+   "name": "NHTSA Recalls",
+   "rule": "Every recall NHTSA received in the window: vehicles, equipment, tires and child seats.",
+   "events": 58,
+   "rowsRead": 245535,
+   "leftOut": {},
+   "file": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_POST_2010.zip",
+    "bytes": 15039755,
+    "sha256": "306e4fb488c45e184d0dc79a786c9e8062029d634e3590ced869fd26ba2cac95",
+    "retrievedAt": "2026-09-26T22:38:53.803Z"
+   }
+  },
+  {
+   "id": "nhtsa-investigations",
+   "name": "NHTSA Investigations",
+   "rule": "Every defect investigation NHTSA opened in the window.",
+   "events": 5,
+   "rowsRead": 154383,
+   "leftOut": {},
+   "file": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/inv/FLAT_INV.zip",
+    "bytes": 4299580,
+    "sha256": "632a7f12837bae96d436c0b5fc39059827451cd3b3e67d80bdb3a0539f00229b",
+    "retrievedAt": "2026-09-26T22:38:52.936Z"
+   }
+  },
+  {
+   "id": "nhtsa-complaints",
+   "name": "NHTSA Owner Complaints",
+   "rule": "A fixed sample of owner complaints added in the window: those whose NHTSA complaint number divides evenly by 13. Vehicle complaints only. A complaint whose text still contains an email address, a phone number, a full VIN, a case number or a street address is left out. The sample was not chosen to be representative.",
+   "events": 519,
+   "rowsRead": 198000,
+   "leftOut": {
+    "text contains a personal detail": 4
+   },
+   "file": {
+    "url": "https://static.nhtsa.gov/odi/ffdd/cmpl/COMPLAINTS_RECEIVED_2025-2026.zip",
+    "bytes": 40345727,
+    "sha256": "b4f6aca15398b28e2a5f8f6e63b7638d96e9c96a35f04abdb987298f9d377cf1",
+    "retrievedAt": "2026-09-26T22:39:01.441Z"
+   }
+  }
+ ]
+}
