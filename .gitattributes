@@ -1,0 +1,4 @@
+# One line ending everywhere. The release manifest pins the SHA-256 of the data
+# files, so a checkout that rewrote line endings would fail the release gate.
+* text=auto eol=lf
+*.png binary
