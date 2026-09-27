@@ -24,6 +24,7 @@ Complaint narratives are handled more carefully than the rest, for two reasons: 
 - Location, VIN and dealer columns in NHTSA's file are never read into this project.
 - A complaint whose text contains an email address, a phone number, a full VIN, a case number or a street address is left out entirely. The release gate refuses a snapshot that contains one.
 - The site shows an excerpt, not the whole narrative.
+- This repository holds the whole narrative in `data/events.json`. That is the text Jev was given, and the release gate checks every decision against it, so it cannot be shortened here. It is the same text NHTSA publishes.
 - Every complaint is labelled as an unverified report.
 
 Pattern matching cannot find a name. If you are the author of a complaint shown on the site and want it removed, write to the site owner through https://gregjones.io, and it will be left out of the next snapshot.
